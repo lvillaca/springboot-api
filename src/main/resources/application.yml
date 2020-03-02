@@ -1,0 +1,77 @@
+server:
+  port: 8999
+  ssl:
+    key-store-type: JKS
+    key-store: classpath:/certs/service_provider.jks
+    key-store-password: service_provider_passwd
+    key-alias: service_provider_alias
+  servlet:
+    context-path: /api  
+  session:
+    timeout: 900
+
+security:
+  oauth2:
+    client:
+      clientId: oidcapi
+      # secret not needed - the api always get an access token and just validates it
+      scope: openid
+      accessTokenUri: https://oidc.transpetro.com.br/auth/realms/API/protocol/openid-connect/token
+      userAuthorizationUri: https://oidc.transpetro.com.br/auth/realms/API/protocol/openid-connect/auth
+    resource:
+      userInfoUri: https://oidc.transpetro.com.br/auth/realms/API/protocol/openid-connect/userinfo
+  application:
+    name: graphqlapi
+  require-ssl: true
+
+ribbon:
+  ServerListRefreshInterval: 1000
+
+endpoints:
+  health:
+    sensitive: false
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
+
+logging:
+  level:
+    org.springframework.web: ERROR
+    org.springframework.cache: TRACE
+    luis: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+spring:
+  jpa:
+    database: default
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://mysqldb:3306/apidb?useSSL=false
+    username: usuariocli
+    password: senhacli
+    platform: mysql
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 10
+      minimum-idle: 5
+      pool-name: PrimaryHikariPool
+  secondary:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://mysqldb:3306/apidb?useSSL=false
+    username: usuariocli
+    password: senhacli
+    platform: mysql
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 10
+      minimum-idle: 5
+      pool-name: SecondaryHikariPool
+  cache:
+    type: redis
+  redis:
+    host: redisdb
+    port: 6379
+
