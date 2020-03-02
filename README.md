@@ -29,9 +29,6 @@ The following are usage instructions:
 
 6 - Launch redis service(s) - as in docker_run_redis.sh
 
-* Create 'oidcapi' cache (Distributed, Synchronous) as per image below
-    * ![Client openid and confidential settings](/images/infinispan.png)
-
 7 - Update src/main/resources/application.yml
 
 * Under ssl, set the keystore attributes based on step 1
