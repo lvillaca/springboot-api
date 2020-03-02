@@ -23,7 +23,7 @@ The following are usage instructions:
 4 - Run commands to create a mysql container
 
 * sudo docker pull mysql/sqlserver:5.7.22
-* sudo docker run --name mysqldb -p 3306:3306 -d mysql/mysql-server:5.7.22
+* sudo docker run --net=apisamplenw --name mysqldb -p 3306:3306 -d mysql/mysql-server:5.7.22
 
 5 - Enter mysql container shell (docker exec -it .. sh) and run docker_run_db.sh
 
