@@ -13,13 +13,13 @@ server:
 security:
   oauth2:
     client:
-      clientId: oidcapi
+      clientId: idp:entityid
       # secret not needed - the api always get an access token and just validates it
       scope: openid
-      accessTokenUri: https://oidc.transpetro.com.br/auth/realms/API/protocol/openid-connect/token
-      userAuthorizationUri: https://oidc.transpetro.com.br/auth/realms/API/protocol/openid-connect/auth
+      accessTokenUri: https://idp.company.com/auth/realms/API/protocol/openid-connect/token
+      userAuthorizationUri: https://idp.company.com/auth/realms/API/protocol/openid-connect/auth
     resource:
-      userInfoUri: https://oidc.transpetro.com.br/auth/realms/API/protocol/openid-connect/userinfo
+      userInfoUri: https://idp.company.com/auth/realms/API/protocol/openid-connect/userinfo
   application:
     name: graphqlapi
   require-ssl: true
