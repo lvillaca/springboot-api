@@ -1,5 +1,5 @@
 This is an example of a SpringBoot GraphQL API, configured via gradle, secured by an IDP (tested via Keycloak).
-cd
+
 It also simplifies the building process of a Docker container image, and can also dispatch a running container.
 
 The following are usage instructions:
@@ -14,7 +14,7 @@ The following are usage instructions:
 
 * Use with Confidential setting and keep the created *secret* handy
 * Create settings according to the following image:
-* ![Client openid and confidential settings](/images/client.png =200x)
+* ![Client openid and confidential settings](/images/client.png)
 
 3 - Run a command to create a Docker network - this will allow connectivity from the api to db and redis hosts
 
