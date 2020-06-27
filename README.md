@@ -64,5 +64,5 @@ The following are usage instructions:
 10 - Run reload.sh script to trigger build and initiate a container
 
 For valitation:
-Edit and run keytool_cert_create.sh, which will dispatch a request to keycloak for an access token and call the API with the obtained access token
+Edit and run docker_run_api.sh, which will dispatch a request to keycloak for an access token and call the API with the obtained access token
 
