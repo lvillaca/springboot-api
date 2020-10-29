@@ -1,4 +1,4 @@
-This is an example of a SpringBoot GraphQL API, configured via gradle, secured by an IDP (tested via Keycloak).
+This is an example of a SpringBoot API, configured via gradle, secured by an IDP (tested via Keycloak).
 
 It also simplifies the building process of a Docker container image, and can also dispatch a running container.
 
