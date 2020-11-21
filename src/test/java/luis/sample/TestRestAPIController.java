@@ -26,19 +26,12 @@ import luis.sample.dados.Funcionario;
 import luis.sample.service.FuncionarioService;
 import java.util.Optional;
 import edu.umd.cs.findbugs.annotations.SuppressWarnings;
-//import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 @RunWith(SpringRunner.class)
-//@SpringBootTest - cannot run app
-
 public class TestRestAPIController { 
 
 
 private static String KEY = "KEY"; 
-
-
-//@Rule 
-//public ExpectedException expectedEx = ExpectedException.none();
 
 @Test 
 @SuppressWarnings("RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT")
@@ -47,7 +40,7 @@ public void testfindFuncionarioByLogin() {
        
        Funcionario func = Mockito.mock(Funcionario.class);
        
-       Mockito.doReturn(KEY).when(func).getLogin(); 
+       Mockito.doReturn(KEY).when(func).getLogin(); // find bugs has an issue with this call, thus the supress warning above
        Mockito.doReturn(Optional.of(func)).when(service).findFuncionarioByLogin(Mockito.anyString());
 
        RestAPIController api = Mockito.spy(RestAPIController.class); 
