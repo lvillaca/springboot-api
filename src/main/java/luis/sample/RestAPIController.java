@@ -19,7 +19,7 @@ import java.util.Optional;
 public class RestAPIController {
 
     @Autowired
-    private FuncionarioService funcionarioService;
+    FuncionarioService funcionarioService;
 
     @GetMapping("/funcionario/{login}")
     public Optional<Funcionario> findFuncionarioByLogin(@PathVariable String login){
