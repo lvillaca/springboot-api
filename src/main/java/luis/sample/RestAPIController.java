@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 /**
- * Classe relativa ao servico de consumo dos GraphQLs.
+ * Classe relativa ao servico de consumo de informacao de funcionarios.
  * @author Luis
  */
 
